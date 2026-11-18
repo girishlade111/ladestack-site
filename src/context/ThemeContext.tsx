@@ -32,6 +32,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       root.classList.remove('dark');
       root.setAttribute('data-theme', 'light');
     }
+    document.querySelector('meta[name="theme-color"]')?.setAttribute(
+      'content',
+      theme === 'dark' ? '#070707' : '#FBFBFB',
+    );
     window.localStorage.setItem('ladestack-theme', theme);
   }, [theme]);
 
