@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-primary: #FBFBFB;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F2F2F2;
+  --bg-glass: rgba(10, 10, 10, 0.04);
+  --bg-glass-active: rgba(10, 10, 10, 0.08);
+
+  --text-primary: #0A0A0A;
+  --text-secondary: rgba(10, 10, 10, 0.72);
+  --text-muted: rgba(10, 10, 10, 0.48);
+  --text-dim: rgba(10, 10, 10, 0.22);
+
+  --border-hairline: rgba(10, 10, 10, 0.09);
+  --border-subtle: rgba(10, 10, 10, 0.16);
+  --border-strong: rgba(10, 10, 10, 0.30);
+
+  --accent-blue: #0099FF;
+  --accent-amber: #F59E0B;
+  --crosshair-color: rgba(10, 10, 10, 0.28);
+
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+.dark {
+  --bg-primary: #070707;
+  --bg-surface: #111111;
+  --bg-surface-elevated: #181818;
+  --bg-glass: rgba(255, 255, 255, 0.07);
+  --bg-glass-active: rgba(255, 255, 255, 0.13);
+
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --text-dim: rgba(255, 255, 255, 0.20);
+
+  --border-hairline: rgba(255, 255, 255, 0.10);
+  --border-subtle: rgba(255, 255, 255, 0.18);
+  --border-strong: rgba(255, 255, 255, 0.36);
+
+  --accent-blue: #0099FF;
+  --accent-amber: #F59E0B;
+  --crosshair-color: rgba(255, 255, 255, 0.28);
+}
+
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  scroll-behavior: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
